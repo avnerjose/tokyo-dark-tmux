@@ -253,15 +253,15 @@ load_modules() {
 
 main() {
   local theme
-  theme="$(get_tmux_option "@catppuccin_flavour" "mocha")"
+  theme="$(get_tmux_option "@tokyo_flavour" "dark")"
 
   # Aggregate all commands in one array
   local tmux_commands=()
 
-  # NOTE: Pulling in the selected theme by the theme that's being set as local
-  # variables.
-  # shellcheck source=catppuccin-frappe.tmuxtheme
-  # https://github.com/dylanaraps/pure-sh-bible#parsing-a-keyval-file
+  # # NOTE: Pulling in the selected theme by the theme that's being set as local
+  # # variables.
+  # # shellcheck source=catppuccin-frappe.tmuxtheme
+  # # https://github.com/dylanaraps/pure-sh-bible#parsing-a-keyval-file
   while IFS='=' read -r key val; do
       # Skip over lines containing comments.
       # (Lines starting with '#').
@@ -270,7 +270,7 @@ main() {
       # '$key' stores the key.
       # '$val' stores the value.
       eval "local $key"="$val"
-  done < "${PLUGIN_DIR}/catppuccin-${theme}.tmuxtheme"
+  done < "${PLUGIN_DIR}/tokyo-${theme}.tmuxtheme"
 
   # status
   set status "on"
