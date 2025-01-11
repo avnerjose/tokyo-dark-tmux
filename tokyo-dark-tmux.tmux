@@ -253,7 +253,7 @@ load_modules() {
 
 main() {
   local theme
-  theme="$(get_tmux_option "@tokyo_flavour" "dark")"
+  theme="$(get_tmux_option "@tokyo_flavour" "dark", "flexoki")"
 
   # Aggregate all commands in one array
   local tmux_commands=()
@@ -270,7 +270,7 @@ main() {
       # '$key' stores the key.
       # '$val' stores the value.
       eval "local $key"="$val"
-  done < "${PLUGIN_DIR}/tokyo-${theme}.tmuxtheme"
+  done < "${PLUGIN_DIR}/${theme}.tmuxtheme"
 
   # status
   set status "on"
