@@ -253,7 +253,7 @@ load_modules() {
 
 main() {
   local theme
-  theme="$(get_tmux_option "@tokyo_flavour" "dark")"
+  theme="$(get_tmux_option "@tokyo_flavour" "tokyo-dark")"
 
   # Aggregate all commands in one array
   local tmux_commands=()
